@@ -7,7 +7,6 @@
     :getPopupContainer="() => $refs.noticeRef.parentElement"
     :autoAdjustOverflow="true"
     :arrowPointAtCenter="true"
-    :overlayStyle="{ width: '300px', top: '50px' }"
   >
     <template slot="content">
       <a-spin :spinning="loading">
@@ -75,7 +74,8 @@ export default {
 
 <style lang="css">
   .header-notice-wrapper {
-    top: 50px !important;
+    width: 320px;
+    top: 59px !important;
   }
 </style>
 <style lang="less" scoped>
