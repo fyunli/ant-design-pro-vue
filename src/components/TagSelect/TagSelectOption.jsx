@@ -28,7 +28,7 @@ export default {
     },
     '$parent.items': {
       handler: function (val) {
-        this.value && val.hasOwnProperty(this.value) && (this.localChecked = val[this.value])
+        this.value && Object.prototype.hasOwnProperty.call(val, this.value) && (this.localChecked = val[this.value])
       },
       deep: true
     }

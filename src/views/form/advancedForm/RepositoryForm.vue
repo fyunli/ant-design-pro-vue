@@ -96,7 +96,7 @@ export default {
       e.preventDefault()
       this.form.validateFields((err, values) => {
         if (!err) {
-          this.$notification['error']({
+          this.$notification.error({
             message: 'Received values of form:',
             description: values
           })

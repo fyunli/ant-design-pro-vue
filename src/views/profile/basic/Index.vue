@@ -229,9 +229,9 @@ export default {
   filters: {
     statusFilter (status) {
       const statusMap = {
-        'processing': '进行中',
-        'success': '完成',
-        'failed': '失败'
+        processing: '进行中',
+        success: '完成',
+        failed: '失败'
       }
       return statusMap[status]
     }

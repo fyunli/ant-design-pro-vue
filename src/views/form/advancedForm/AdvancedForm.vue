@@ -252,7 +252,7 @@ export default {
       // clean this.errors
       this.errors = []
       Promise.all([repositoryForm, taskForm]).then(values => {
-        $notification['error']({
+        $notification.error({
           message: 'Received values of form:',
           description: JSON.stringify(values)
         })

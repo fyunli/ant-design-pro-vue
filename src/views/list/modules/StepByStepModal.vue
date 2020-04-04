@@ -137,7 +137,7 @@ export default {
       const currentStep = step + 1
       if (currentStep <= 2) {
         // stepForms
-        validateFields(stepForms[ this.currentStep ], (errors, values) => {
+        validateFields(stepForms[this.currentStep], (errors, values) => {
           if (!errors) {
             this.currentStep = currentStep
           }

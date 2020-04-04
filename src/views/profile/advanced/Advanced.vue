@@ -285,15 +285,15 @@ export default {
   filters: {
     statusFilter (status) {
       const statusMap = {
-        'agree': '成功',
-        'reject': '驳回'
+        agree: '成功',
+        reject: '驳回'
       }
       return statusMap[status]
     },
     statusTypeFilter (type) {
       const statusTypeMap = {
-        'agree': 'success',
-        'reject': 'error'
+        agree: 'success',
+        reject: 'error'
       }
       return statusTypeMap[type]
     }

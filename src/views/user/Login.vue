@@ -224,7 +224,7 @@ export default {
           const hide = this.$message.loading('验证码发送中..', 0)
           getSmsCaptcha({ mobile: values.mobile }).then(res => {
             setTimeout(hide, 2500)
-            this.$notification['success']({
+            this.$notification.success({
               message: '提示',
               description: '验证码获取成功，您的验证码为：' + res.result.captcha,
               duration: 8
@@ -273,7 +273,7 @@ export default {
     },
     requestFailed (err) {
       this.isLoginError = true
-      this.$notification['error']({
+      this.$notification.error({
         message: '错误',
         description: ((err.response || {}).data || {}).message || '请求出现错误，请稍后再试',
         duration: 4
