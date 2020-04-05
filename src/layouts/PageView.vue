@@ -1,7 +1,7 @@
 <template>
-  <div :style="!$route.meta.hiddenHeaderContent ? 'margin: -24px -24px 0px;' : null">
+  <div :style="!hiddenHeaderContent ? 'margin: -24px -24px 0px;' : null">
     <!-- pageHeader , route meta :true on hide -->
-    <page-header v-if="!$route.meta.hiddenHeaderContent" :title="pageTitle" :logo="logo" :avatar="avatar">
+    <page-header v-if="!hiddenHeaderContent" :title="pageTitle" :logo="logo" :avatar="avatar">
       <slot slot="action" name="action"></slot>
       <slot slot="content" name="headerContent"></slot>
       <div slot="content" v-if="!this.$slots.headerContent && description">
@@ -37,7 +37,7 @@
         </div>
       </div>
     </page-header>
-    <div class="content" :style="{ 'margin-top': (multiTab?48:24) + 'px' }">
+    <div class="content" :style="!hiddenHeaderContent ? 'margin: 24px 24px 0px;' : null">
       <div class="page-header-index-wide">
         <slot>
           <!-- keep-alive  -->
@@ -91,7 +91,10 @@ export default {
   computed: {
     ...mapState({
       multiTab: state => state.app.multiTab
-    })
+    }),
+    hiddenHeaderContent() {
+      return this.$route.meta.hiddenHeaderContent
+    }
   },
   mounted () {
     this.tabs = this.directTabs
@@ -124,7 +127,7 @@ export default {
 
 <style lang="less" scoped>
   .content {
-    margin: 24px 24px 0;
+    // margin: 24px 24px 0;
     .link {
       margin-top: 16px;
       &:not(:empty) {
