@@ -37,7 +37,7 @@
         </div>
       </div>
     </page-header>
-    <div class="content">
+    <div class="content" :style="{ 'margin-top': (multiTab?48:24) + 'px' }">
       <div class="page-header-index-wide">
         <slot>
           <!-- keep-alive  -->
